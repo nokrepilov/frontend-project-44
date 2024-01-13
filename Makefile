@@ -10,4 +10,7 @@ publish: #чтобы не засорять общее хранилище уче�
 test:
 	npm test
 
+lint:
+	npx eslint .
+
 .PHONY: test
