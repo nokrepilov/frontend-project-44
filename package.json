@@ -2,8 +2,9 @@
   "name": "@hexlet/code",
   "type": "module",
   "version": "1.0.0",
-  "bin": {
-    "brain-games": "bin/brain-games.js"
+  "bin": { 
+	"brain-games": "bin/brain-games.js",
+	"brain-even": "bin/brain-even.js"
   },
   "description": "[![Actions Status](https://github.com/nokrepilov/frontend-project-44/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/nokrepilov/frontend-project-44/actions)",
   "main": "index.js",
