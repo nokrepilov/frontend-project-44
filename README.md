@@ -11,3 +11,6 @@ https://asciinema.org/~nokrepilov
 
 ### Recording session GCD Game:
  https://asciinema.org/a/PXQYAgmUGZSm9WjWTh8ewtCHL
+
+### Recording session Progression Game:
+https://asciinema.org/a/SmScJouuyl2T5M3bnIXDH8183

@@ -82,3 +82,21 @@ export const gcdGame = () => {
     generateRandomNumber,
   };
 };
+
+// Функция прогрессия
+
+export const generateProgression = (length) => {
+  const start = Math.floor(Math.random() * 10);
+  const diff = Math.floor(Math.random() * 5) + 1;
+  const progression = [start];
+  for (let i = 1; i < length; i += 1) {
+    progression.push(progression[i - 1] + diff);
+  }
+  return progression;
+};
+export const hideNumber = (progression) => {
+  const hiddenIndex = Math.floor(Math.random() * progression.length);
+  const correctAnswer = progression[hiddenIndex];
+  progression[hiddenIndex] = "..";
+  return { progression, correctAnswer, hiddenIndex };
+};
