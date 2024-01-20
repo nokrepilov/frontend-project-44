@@ -84,7 +84,6 @@ export const gcdGame = () => {
 };
 
 // Функция прогрессия
-
 export const generateProgression = (length) => {
   const start = Math.floor(Math.random() * 10);
   const diff = Math.floor(Math.random() * 5) + 1;
@@ -99,4 +98,28 @@ export const hideNumber = (progression) => {
   const correctAnswer = progression[hiddenIndex];
   progression[hiddenIndex] = "..";
   return { progression, correctAnswer, hiddenIndex };
+};
+
+// Функция простое ли число
+// Функция, которая будет проверяет, является ли число простым:
+export const isPrime = (number) => {
+  if (number <= 1) {
+    return false;
+  }
+  for (let i = 2; i <= Math.sqrt(number); i += 1) {
+    if (number % i === 0) {
+      return false;
+    }
+  }
+  return true;
+};
+
+// Логика игры:
+export const PrimeGame = () => {
+  const correctAnswersCount = 0;
+  while (correctAnswersCount < 3) {
+    const number = Math.floor(Math.random() * 100) + 1;
+    console.log(`Question: ${number}`);
+    const userAnswer = readlineSync.question("Your answer: ");
+  }
 };
