@@ -14,3 +14,6 @@ https://asciinema.org/~nokrepilov
 
 ### Recording session Progression Game:
 https://asciinema.org/a/SmScJouuyl2T5M3bnIXDH8183
+
+### Recording session Prime Game:
+https://asciinema.org/a/8h7MhrYWmEVlj7HHeoXfeZOjO
