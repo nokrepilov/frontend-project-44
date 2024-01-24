@@ -1,5 +1,5 @@
 import readlineSync from "readline-sync";
-import { greeting } from "./index.js";
+import { greeting } from "../index.js";
 
 const generateProgression = (length) => {
   const start = Math.floor(Math.random() * 10);

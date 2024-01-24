@@ -1,21 +1,11 @@
 import readlineSync from "readline-sync";
-import { greeting, answers, gcdGame } from "./index.js";
+import { greeting } from "../index.js";
 
 export const playGCDGame = () => {
   const userName = greeting();
   let correctAnswersCount = 0;
   console.log("Find the greatest common divisor of given numbers.");
 
-  //   while (correctAnswersCount > 3) {
-  //     const { userAnswer, correctAnswer, number1, number2 } = gcdGame();
-  //     const isAnswerCorrect = answers(userAnswer, correctAnswer, userName);
-  //     if (!isAnswerCorrect) {
-  //       return;
-  //     }
-  //     correctAnswersCount += 1;
-  //   }
-
-  //   console.log(`Congratulations, ${userName}!`);
   const gcd = (a, b) => {
     if (b === 0) {
       return a;
