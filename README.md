@@ -18,17 +18,41 @@ https://asciinema.org/a/SmScJouuyl2T5M3bnIXDH8183
 ### Recording session Prime Game:
 https://asciinema.org/a/8h7MhrYWmEVlj7HHeoXfeZOjO
 
-## Setup Even Game (Answer "yes" if the number is even, otherwise answer "no".):
+## Setup Even Game:
+
+   ## make install bain-even
+
+## Setup Calc Game:
+
+   ## make install bain-calc
+
+## Setup GCD Game:
+
+   ## make install bain-gcd
+
+## Setup Prime Game:
+
+   ## make install bain-prime
+
+## Setup Progression Game: 
+
+   ## make install bain-progression
+
+## Start Even Game (Answer "yes" if the number is even, otherwise answer "no".):
   ## write bain-even
 
-## Setup Calc Game (What is the result of the expression?):
+## Start Calc Game (What is the result of the expression?):
    ## write  bain-calc
 
-## Setup GCD Game (Find the greatest common divisor of given numbers.):
+## Start GCD Game (Find the greatest common divisor of given numbers.):
    ## write  bain-gcd
 
-## Setup Prime Game (Answer "yes" if given number is prime. Otherwise answer "no".):
+## Start Prime Game (Answer "yes" if given number is prime. Otherwise answer "no".):
     ## write bain-prime   
 
-## Setup Progression Game (What number is missing in the progression?):
+## Start Progression Game (What number is missing in the progression?):
     ## write bain-progression 
+
+##Run tests
+
+## make test
