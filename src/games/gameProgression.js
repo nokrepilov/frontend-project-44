@@ -1,5 +1,5 @@
-import readlineSync from "readline-sync";
-import { greeting } from "../index.js";
+import readlineSync from 'readline-sync';
+import { greeting } from '../index.js';
 
 const generateProgression = (length) => {
   const start = Math.floor(Math.random() * 10);
@@ -12,30 +12,31 @@ const generateProgression = (length) => {
 };
 
 const hideNumber = (progression) => {
+  const localProgression = [...progression];
   const hiddenIndex = Math.floor(Math.random() * progression.length);
   const hiddenValue = progression[hiddenIndex];
-  progression[hiddenIndex] = "..";
+  localProgression[hiddenIndex] = '..';
   return { progression, hiddenValue };
 };
 
-export const playProgressionGame = () => {
+const playProgressionGame = () => {
   const userName = greeting();
-  console.log("What number is missing in the progression?");
+  console.log('What number is missing in the progression?');
 
   let score = 0;
   for (let i = 0; i < 3; i += 1) {
     const length = Math.floor(Math.random() * 6) + 5;
     const { progression, hiddenValue } = hideNumber(
-      generateProgression(length)
+      generateProgression(length),
     );
-    console.log(`Question: ${progression.join(" ")}`);
-    const userAnswer = readlineSync.question("Your answer: ");
+    console.log(`Question: ${progression.join(' ')}`);
+    const userAnswer = readlineSync.question('Your answer: ');
     if (parseInt(userAnswer, 10) === hiddenValue) {
-      console.log("Correct!");
+      console.log('Correct!');
       score += 1;
     } else {
       console.log(
-        `'${userAnswer}' is wrong answer ;(. Correct answer was '${hiddenValue}'.`
+        `'${userAnswer}' is wrong answer ;(. Correct answer was '${hiddenValue}'.`,
       );
       console.log(`Let's try again, ${userName}!`);
       break;
@@ -46,3 +47,4 @@ export const playProgressionGame = () => {
     console.log(`Congratulations, ${userName}!`);
   }
 };
+export default playProgressionGame;
