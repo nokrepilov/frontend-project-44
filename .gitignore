@@ -39,3 +39,10 @@ doc
 .tool-versions
 .idea/
 app/assets/builds/
+
+# Ignore record files
+demo.cast
+demo1.cast
+demo2.cast
+demo3.cast
+demo4.cast

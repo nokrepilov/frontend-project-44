@@ -13,10 +13,10 @@ const generateProgression = (length) => {
 
 const hideNumber = (progression) => {
   const localProgression = [...progression];
-  const hiddenIndex = Math.floor(Math.random() * progression.length);
-  const hiddenValue = progression[hiddenIndex];
+  const hiddenIndex = Math.floor(Math.random() * localProgression.length);
+  const hiddenValue = localProgression[hiddenIndex];
   localProgression[hiddenIndex] = '..';
-  return { progression, hiddenValue };
+  return { localProgression, hiddenValue };
 };
 
 const playProgressionGame = () => {
@@ -26,10 +26,10 @@ const playProgressionGame = () => {
   let score = 0;
   for (let i = 0; i < 3; i += 1) {
     const length = Math.floor(Math.random() * 6) + 5;
-    const { progression, hiddenValue } = hideNumber(
+    const { localProgression, hiddenValue } = hideNumber(
       generateProgression(length),
     );
-    console.log(`Question: ${progression.join(' ')}`);
+    console.log(`Question: ${localProgression.join(' ')}`);
     const userAnswer = readlineSync.question('Your answer: ');
     if (parseInt(userAnswer, 10) === hiddenValue) {
       console.log('Correct!');

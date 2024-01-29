@@ -1,3 +1,24 @@
+[This project contains various mathematical games for the brain, install, play, and enjoy the victories!]
+
+
+## Install the npm package using the command:
+   $ npm i your-awesome-plugin-name
+
+## Installing dependencies
+[To install dependencies, run the command:]
+   $ npm i
+
+## Launching the Development server
+[To start the development server, run the command:]
+   $ npm start
+
+## Creating a build
+[To run a production build, run the command:]
+   $ npm run build
+
+## Testing
+   $ npm run test
+
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/nokrepilov/frontend-project-44/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/nokrepilov/frontend-project-44/actions)
 [![Maintainability](https://api.codeclimate.com/v1/badges/aa586024259c8782a108/maintainability)](https://codeclimate.com/github/nokrepilov/frontend-project-44/maintainability)
@@ -52,7 +73,3 @@ https://asciinema.org/a/8h7MhrYWmEVlj7HHeoXfeZOjO
 
 ## Start Progression Game (What number is missing in the progression?):
     ## write bain-progression 
-
-##Run tests
-
-## make test
