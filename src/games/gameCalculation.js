@@ -1,47 +1,39 @@
-import readlineSync from 'readline-sync';
-import { greeting } from '../index.js';
+import runGame from '../index.js';
+import getRandomInRange from '../utils.js';
+
+const getRandomOpetator = () => {
+  const operators = ['+', '-', '*'];
+  return operators[getRandomInRange(0, operators.length - 1)];
+};
+
+const calculation = (num1, num2, operator) => {
+  switch (operator) {
+    case '+':
+      return num1 + num2;
+    case '-':
+      return num1 - num2;
+    case '*':
+      return num1 * num2;
+    default:
+      throw new Error(`Operator ${operator} - is incorrect`);
+  }
+};
+
+const generateRound = () => {
+  const value1 = getRandomInRange(0, 10);
+  const value2 = getRandomInRange(0, 10);
+  const operation = getRandomOpetator();
+
+  const gameQuestion = `${value1} ${operation} ${value2}`;
+
+  const correctAnswer = `${calculation(value1, value2, operation)}`;
+
+  return [gameQuestion, correctAnswer];
+};
 
 const playCalcGame = () => {
-  const userName = greeting();
-  let correctAnswersCount = 0;
-  console.log('What is the result of the expression?');
-
-  while (correctAnswersCount < 3) {
-    const num1 = Math.floor(Math.random() * 100);
-    const num2 = Math.floor(Math.random() * 100);
-    const operators = ['+', '-', '*'];
-    const operator = operators[Math.floor(Math.random() * operators.length)];
-    const expression = `${num1} ${operator} ${num2}`;
-    console.log(`Question: ${expression}`);
-    const userAnswer = Number(readlineSync.question('Your answer: '));
-
-    let correctAnswer;
-    switch (operator) {
-      case '+':
-        correctAnswer = num1 + num2;
-        break;
-      case '-':
-        correctAnswer = num1 - num2;
-        break;
-      case '*':
-        correctAnswer = num1 * num2;
-        break;
-      default:
-        break;
-    }
-
-    if (userAnswer !== correctAnswer) {
-      console.log(
-        `'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`,
-      );
-
-      console.log(`Let's try again, ${userName}!`);
-      return;
-    }
-    console.log('Correct!');
-    correctAnswersCount += 1;
-  }
-
-  console.log(`Congratulations, ${userName}!`);
+  const gameRulls = 'What is the result of the expression?';
+  runGame(gameRulls, generateRound);
 };
+
 export default playCalcGame;

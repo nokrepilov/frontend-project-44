@@ -1,50 +1,37 @@
-import readlineSync from 'readline-sync';
-import { greeting } from '../index.js';
+import runGame from '../index.js';
+import getRandomInRange from '../utils.js';
 
-const generateProgression = (length) => {
-  const start = Math.floor(Math.random() * 10);
-  const diff = Math.floor(Math.random() * 5) + 1;
-  const progression = [start];
-  for (let i = 1; i < length; i += 1) {
-    progression.push(progression[i - 1] + diff);
+const generateProgression = (length, start, step) => {
+  const result = [];
+  for (let i = 0; i < length; i += 1) {
+    result.push(start + step * i);
   }
-  return progression;
+  return result;
 };
 
-const hideNumber = (progression) => {
-  const localProgression = [...progression];
-  const hiddenIndex = Math.floor(Math.random() * localProgression.length);
-  const hiddenValue = localProgression[hiddenIndex];
-  localProgression[hiddenIndex] = '..';
-  return { localProgression, hiddenValue };
+const generateRound = () => {
+  const progressionLength = 10;
+  const progressionStep = getRandomInRange(1, 5);
+  const progressionStart = getRandomInRange(1, 50);
+
+  const progression = generateProgression(
+    progressionLength,
+    progressionStart,
+    progressionStep,
+  );
+  const hiddenIndex = getRandomInRange(0, 9);
+  const correctAnswer = String(progression[hiddenIndex]);
+
+  const progressionForUser = progression;
+  progressionForUser[hiddenIndex] = '..';
+  const gameQuestion = `${progressionForUser.join(' ')}`;
+
+  return [gameQuestion, correctAnswer];
 };
 
 const playProgressionGame = () => {
-  const userName = greeting();
-  console.log('What number is missing in the progression?');
-
-  let score = 0;
-  for (let i = 0; i < 3; i += 1) {
-    const length = Math.floor(Math.random() * 6) + 5;
-    const { localProgression, hiddenValue } = hideNumber(
-      generateProgression(length),
-    );
-    console.log(`Question: ${localProgression.join(' ')}`);
-    const userAnswer = readlineSync.question('Your answer: ');
-    if (parseInt(userAnswer, 10) === hiddenValue) {
-      console.log('Correct!');
-      score += 1;
-    } else {
-      console.log(
-        `'${userAnswer}' is wrong answer ;(. Correct answer was '${hiddenValue}'.`,
-      );
-      console.log(`Let's try again, ${userName}!`);
-      break;
-    }
-  }
-
-  if (score === 3) {
-    console.log(`Congratulations, ${userName}!`);
-  }
+  const gameRulls = 'What number is missing in the progression?';
+  runGame(gameRulls, generateRound);
 };
+
 export default playProgressionGame;

@@ -1,75 +1,68 @@
-[This project contains various mathematical games for the brain, install, play, and enjoy the victories!]
-
-
-## Install the npm package using the command:
-   $ npm i your-awesome-plugin-name
-
-## Installing dependencies
-[To install dependencies, run the command:]
-   $ npm i
-
-## Launching the Development server
-[To start the development server, run the command:]
-   $ npm start
-
-## Creating a build
-[To run a production build, run the command:]
-   $ npm run build
-
-## Testing
-   $ npm run test
-
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/nokrepilov/frontend-project-44/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/nokrepilov/frontend-project-44/actions)
 [![Maintainability](https://api.codeclimate.com/v1/badges/aa586024259c8782a108/maintainability)](https://codeclimate.com/github/nokrepilov/frontend-project-44/maintainability)
 
-### Recording session Even Game:
-https://asciinema.org/a/mdw3kdWwlKM7KKzxSedpukeWT
-https://asciinema.org/~nokrepilov
+## Brain Games
 
-### Recording session Calc Game:
+Brain Games is a set of five console games. Each game asks questions that need to be answered. After three correct answers, the game is considered to be completed. Incorrect results end the game and offer to play it again.
+To exit a game simply run CTRL + C.
+
+## Installation
+
+Prerequisites: Node.js
+
+
+ >git clone https://github.com/nokrepilov/frontend-project-44
+
+ >cd frontend-project-44
+
+ >make install
+
+ >npm link
+
+
+## Games
+
+### Parity check
+
+Answer 'yes' if given number is even and 'no' if this number is odd.
+To start the game:
+>brain-even
+#### Recording session Even Game:
+https://asciinema.org/a/mdw3kdWwlKM7KKzxSedpukeWT
+
+### Calculator
+
+You need to calculate a rundom mathematical expression and give the result.
+To start the game:
+>brain-calc
+#### Recording session Calc Game:
  https://asciinema.org/a/7X4lmREPj9bxNOvjpGAnjzvFT
 
-### Recording session GCD Game:
+### Greatest common divisor
+
+You need to find greatest common divisor of two random number.
+To start the game:
+>brain-gcd
+#### Recording session GCD Game:
  https://asciinema.org/a/PXQYAgmUGZSm9WjWTh8ewtCHL
 
-### Recording session Progression Game:
+### Arithmetic progression
+
+You need to find the missing number at random series of numbers that form an arithmetic progression.
+To start the game:
+>brain-progression
+#### Recording session Progression Game:
 https://asciinema.org/a/SmScJouuyl2T5M3bnIXDH8183
 
-### Recording session Prime Game:
+
+### Is this a prime number?
+
+Answer 'yes' if given number is prime and 'no' if it is not.
+To start the game:
+brain-prime
+#### Recording session Prime Game:
 https://asciinema.org/a/8h7MhrYWmEVlj7HHeoXfeZOjO
 
-## Setup Even Game:
 
-   ## make install bain-even
 
-## Setup Calc Game:
-
-   ## make install bain-calc
-
-## Setup GCD Game:
-
-   ## make install bain-gcd
-
-## Setup Prime Game:
-
-   ## make install bain-prime
-
-## Setup Progression Game: 
-
-   ## make install bain-progression
-
-## Start Even Game (Answer "yes" if the number is even, otherwise answer "no".):
-  ## write bain-even
-
-## Start Calc Game (What is the result of the expression?):
-   ## write  bain-calc
-
-## Start GCD Game (Find the greatest common divisor of given numbers.):
-   ## write  bain-gcd
-
-## Start Prime Game (Answer "yes" if given number is prime. Otherwise answer "no".):
-    ## write bain-prime   
-
-## Start Progression Game (What number is missing in the progression?):
-    ## write bain-progression 
